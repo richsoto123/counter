@@ -6,18 +6,44 @@ class Counter extends Component {
     this.state = {
       count: 0,
     }
+   
   }
 
   increment =()=> {
     // this is where your code goes
-    this.setState({
-      count: this.state.count +1
-    }) 
+    if (this.state.count >= 20){
+
+    this.setState({ 
+      count: this.state.count = 20
+    })
+      
+    }else {
+      this.setState ({
+      count: this.state.count +1 
+      
+      }) 
+    } 
   }
 
   decrement = () => {
+
+    if (this.state.count <= 0){
+
+      this.setState({ 
+        count: this.state.count = 0
+      })
+    } else {
+      this.setState({
+        count: this.state.count -1
+      })
+    }
+  }
+
+  clear = ()=> {
+
+    
     this.setState({
-      count: this.state.count -1
+      count: this.state.count = 0
     })
   }
 
@@ -29,6 +55,8 @@ class Counter extends Component {
           <h1>{this.state.count}</h1>
           <button type = "button" onClick={this.increment}>Increment</button>
           <button type = "button" onClick={this.decrement}>Decrement</button>
+          <button type = "button" onClick={this.clear}>clear</button>
+          
         </div>
       
 
